@@ -5,6 +5,8 @@ Project learning K8s
 - Pod = Task (Ephemeral instance).
 - Pods are associated with services via Selector -> Labels (key value pairs).
 - ReplicaSets are similar to auto-scaling groups.
+- Deployment is a ReplicaSet with rolling deployment
+--Can do rollbacks if something goes wrong
 
 ## Useful Commands
 ### kubectl
@@ -30,3 +32,10 @@ Project learning K8s
     ## Delete
     - kubectl delete pod PODNAME ## Deletes pod
     - kubectl delete pod PODNAME --force ## Forcefully deletes the pod
+    - kubectl delete replicaset REPLICASETNAME ## deletes replicaset
+
+    ## Deployment
+    - kubectl rollout status deployment STACKNAME ## Rolling deployment
+    - kubectl rollout history deployment STACKNAME ## Shows you previous versions/deployments
+    - kubectl rollout undo deployment STACKNAME ## Revert to previous version.
+    - kubectl rollout undo deployment STACKNAME --to-revision=2 ## Revert to version 2
