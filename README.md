@@ -39,3 +39,7 @@ Project learning K8s
     - kubectl rollout history deployment STACKNAME ## Shows you previous versions/deployments
     - kubectl rollout undo deployment STACKNAME ## Revert to previous version.
     - kubectl rollout undo deployment STACKNAME --to-revision=2 ## Revert to version 2
+
+    ## Namespaces
+    - kubectl get namespaces
+    - kubectl get all -n kube-system # Gets all from the kube-system namespace
